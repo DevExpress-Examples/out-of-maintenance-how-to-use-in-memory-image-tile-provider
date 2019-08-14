@@ -1,0 +1,1 @@
+This example illustrates how to generate image tiles at runtime by attaching a custom tile generator class implementing the **IImageTileSource** interface to the **ImageTileDataProvider.TileSource** property.
