@@ -27,6 +27,7 @@ namespace InMemoryTileProvider
 
         public class SimpleTileGenerator : IImageTileSource
         {
+            readonly Font font = new Font("Arial", 10);
             Random rnd = new Random();
             public bool CanDisposeSourceImage => true;
             public string Name => nameof(SimpleTileGenerator);
@@ -39,7 +40,7 @@ namespace InMemoryTileProvider
                     gr.Clear(Color.FromArgb(128, rnd.Next(255),
                             rnd.Next(255), rnd.Next(255)));
                     gr.DrawString(string.Format("{0} {1} {2}", x, y, level),
-                            new Font("Arial", 10), Brushes.Black, new PointF(5, 5));
+                            font, Brushes.Black, new PointF(5, 5));
                 }
                 return bitmap;
             }
