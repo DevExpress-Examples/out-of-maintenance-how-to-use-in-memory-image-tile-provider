@@ -29,8 +29,17 @@ namespace InMemoryTileProvider
         {
             readonly Font font = new Font("Arial", 10);
             Random rnd = new Random();
-            public bool CanDisposeSourceImage => true;
-            public string Name => nameof(SimpleTileGenerator);
+            public bool CanDisposeSourceImage {
+                get {
+                    return true;
+                }
+            }
+
+            public string Name {
+                get {
+                    return nameof(SimpleTileGenerator);
+                }
+            }
 
             public Image GetImage(int x, int y, int level, Size size)
             {
