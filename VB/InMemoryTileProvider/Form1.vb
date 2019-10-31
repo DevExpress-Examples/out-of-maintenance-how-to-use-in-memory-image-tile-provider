@@ -28,19 +28,19 @@ Namespace InMemoryTileProvider
 
 			Private ReadOnly font As New Font("Arial", 10)
 			Private rnd As New Random()
-			Public ReadOnly Property CanDisposeSourceImage() As Boolean
+			Public ReadOnly Property CanDisposeSourceImage() As Boolean Implements IImageTileSource.CanDisposeSourceImage
 				Get
 					Return True
 				End Get
 			End Property
 
-			Public ReadOnly Property Name() As String
+			Public ReadOnly Property Name() As String Implements IImageTileSource.Name
 				Get
 					Return NameOf(SimpleTileGenerator)
 				End Get
 			End Property
 
-			Public Function GetImage(ByVal x As Integer, ByVal y As Integer, ByVal level As Integer, ByVal size As Size) As Image
+			Public Function GetImage(ByVal x As Integer, ByVal y As Integer, ByVal level As Integer, ByVal size As Size) As Image Implements IImageTileSource.GetImage
 				Dim bitmap As New Bitmap(size.Width, size.Height)
 				Using gr As Graphics = Graphics.FromImage(bitmap)
 					gr.Clear(Color.FromArgb(128, rnd.Next(255), rnd.Next(255), rnd.Next(255)))
