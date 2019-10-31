@@ -33,6 +33,7 @@ Namespace InMemoryTileProvider
 					Return True
 				End Get
 			End Property
+
 			Public ReadOnly Property Name() As String
 				Get
 					Return NameOf(SimpleTileGenerator)
